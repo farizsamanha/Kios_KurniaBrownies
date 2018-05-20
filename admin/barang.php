@@ -4,6 +4,7 @@
 <button style="margin-bottom:20px" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2"><span class="glyphicon glyphicon-plus"></span>Tambah Barang</button>
 <br/>
 <br/>
+<br/>
 
 <?php 
 $periksa=mysql_query("select * from barang where jumlah <=3");
@@ -16,6 +17,7 @@ while($q=mysql_fetch_array($periksa)){
 				$('#pesan_sedia').append("<span class='glyphicon glyphicon-asterisk'></span>");
 			});
 		</script>
+
 		<?php
 		echo "<div style='padding:5px' class='alert alert-warning'><span class='glyphicon glyphicon-info-sign'></span> Stok  <a style='color:red'>". $q['nama']."</a> yang tersisa sudah kurang dari 3 . silahkan pesan lagi !!</div>";	
 	}
@@ -84,13 +86,13 @@ $start = ($page - 1) * $per_hal;
 	}
 	?>
 	<tr>
-		<td colspan="4">Total Modal</td>
+		<td colspan="4"></td>
 		<td>			
 		<?php 
 		
-			$x=mysql_query("select sum(modal) as total from barang");	
-			$xx=mysql_fetch_array($x);			
-			echo "<b> Rp.". number_format($xx['total']).",-</b>";		
+			// $x=mysql_query("select sum(modal) as total from barang");	
+			// $xx=mysql_fetch_array($x);			
+			// echo "<b> Rp.". number_format($xx['total']).",-</b>";		
 		?>
 		</td>
 	</tr>

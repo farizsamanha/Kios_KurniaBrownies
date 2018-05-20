@@ -45,7 +45,7 @@
 				</div>
 				<div class="modal-body">
 					<?php 
-					$periksa=mysql_query("select * from barang where jumlah <=3");
+					$periksa=mysql_query("select * from barang where jumlah <=3"); //3 diganti nilai rop
 					while($q=mysql_fetch_array($periksa)){	
 						if($q['jumlah']<=3){			
 							echo "<div style='padding:5px' class='alert alert-warning'><span class='glyphicon glyphicon-info-sign'></span> Stok  <a style='color:red'>". $q['nama']."</a> yang tersisa sudah kurang dari 3 . silahkan pesan lagi !!</div>";	
@@ -84,7 +84,7 @@
 			<li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span>  Dashboard</a></li>			
 			<li><a href="barang.php"><span class="glyphicon glyphicon-briefcase"></span>  Data Barang</a></li>
 			<li><a href="barang_laku.php"><span class="glyphicon glyphicon-briefcase"></span>  Entry Penjualan</a></li>
-			<li><a href="forecast.php"><span class="glyphicon glyphicon-briefcase"></span>  Forecast</a></li> 
+			
 			<li><a href="rop.php"><span class="glyphicon glyphicon-briefcase"></span>  Reorder Point</a></li>        												
 			<li><a href="ganti_foto.php"><span class="glyphicon glyphicon-picture"></span>  Ganti Foto</a></li>
 			<li><a href="ganti_pass.php"><span class="glyphicon glyphicon-lock"></span> Ganti Password</a></li>
