@@ -24,7 +24,7 @@ while($q=mysql_fetch_array($periksa)){
 }
 ?>
 <?php 
-$per_hal=10;
+$per_hal=20;
 $jumlah_record=mysql_query("SELECT COUNT(*) from barang");
 $jum=mysql_result($jumlah_record, 0);
 $halaman=ceil($jum / $per_hal);
