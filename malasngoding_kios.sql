@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2018 at 11:16 PM
+-- Generation Time: May 21, 2018 at 10:34 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -108,7 +108,8 @@ INSERT INTO `barang_laku` (`id`, `tanggal`, `nama`, `jumlah`, `harga`, `total_ha
 (5, '2018-05-17', 'almond kecil', 3, 65000, 195000, 105000),
 (6, '2018-05-16', 'almond kecil', 7, 65000, 455000, 245000),
 (7, '2018-05-15', 'almond kecil', 5, 65000, 325000, 175000),
-(8, '2018-05-14', 'almond kecil', 4, 65000, 260000, 140000);
+(8, '2018-05-14', 'almond kecil', 4, 65000, 260000, 140000),
+(90, '2018-05-14', 'almond besar', 20, 20000, 29999999, 2000000);
 
 -- --------------------------------------------------------
 
@@ -117,30 +118,44 @@ INSERT INTO `barang_laku` (`id`, `tanggal`, `nama`, `jumlah`, `harga`, `total_ha
 --
 
 CREATE TABLE `forecast` (
-  `id` int(50) NOT NULL,
-  `bulan` varchar(50) NOT NULL,
-  `minggu` int(50) NOT NULL,
-  `demand` int(50) NOT NULL,
-  `forecast` int(50) NOT NULL
+  `id` int(11) NOT NULL,
+  `idbarang` int(11) NOT NULL,
+  `namabarang` varchar(20) NOT NULL,
+  `bulan` int(11) NOT NULL,
+  `minggu_ke` int(11) NOT NULL,
+  `demand` int(11) NOT NULL,
+  `forecast` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forecast`
 --
 
-INSERT INTO `forecast` (`id`, `bulan`, `minggu`, `demand`, `forecast`) VALUES
-(1, 'januari', 1, 10, 0),
-(2, 'januari', 2, 13, 0),
-(3, 'januari', 3, 8, 12),
-(4, 'januari', 4, 7, 12),
-(5, 'februari', 1, 6, 5),
-(6, 'februari', 2, 5, 5),
-(7, 'februari', 3, 6, 5),
-(8, 'februari', 4, 5, 5),
-(9, 'maret', 1, 7, 5),
-(10, 'maret', 2, 8, 5),
-(11, 'maret', 3, 7, 5),
-(12, 'maret', 4, 8, 5);
+INSERT INTO `forecast` (`id`, `idbarang`, `namabarang`, `bulan`, `minggu_ke`, `demand`, `forecast`) VALUES
+(1, 14, 'almond kecil', 1, 1, 5, 5),
+(2, 14, 'almond kecil', 1, 2, 6, 5),
+(3, 14, 'almond kecil', 1, 3, 5, 5),
+(4, 14, 'almond kecil', 1, 4, 7, 5),
+(5, 14, 'almond kecil', 2, 5, 6, 5),
+(6, 14, 'almond kecil', 2, 6, 5, 5),
+(7, 14, 'almond kecil', 2, 7, 6, 5),
+(8, 14, 'almond kecil', 2, 8, 5, 5),
+(9, 14, 'almond kecil', 3, 9, 7, 5),
+(10, 14, 'almond kecil', 3, 10, 8, 5),
+(11, 14, 'almond kecil', 3, 11, 7, 5),
+(12, 14, 'almond kecil', 3, 12, 8, 5),
+(13, 20, 'kukus coklat', 1, 1, 5, 5),
+(14, 20, 'kukus coklat', 1, 2, 6, 5),
+(15, 20, 'kukus coklat', 1, 3, 5, 5),
+(16, 20, 'kukus coklat', 1, 4, 7, 5),
+(17, 20, 'kukus coklat', 2, 5, 6, 5),
+(18, 20, 'kukus coklat', 2, 6, 5, 5),
+(19, 20, 'kukus coklat', 2, 7, 6, 5),
+(20, 20, 'kukus coklat', 2, 8, 5, 5),
+(21, 20, 'kukus coklat', 3, 9, 7, 5),
+(22, 20, 'kukus coklat', 3, 10, 8, 5),
+(23, 20, 'kukus coklat', 3, 11, 7, 5),
+(24, 20, 'kukus coklat', 3, 12, 8, 5);
 
 -- --------------------------------------------------------
 
@@ -217,13 +232,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `barang_laku`
 --
 ALTER TABLE `barang_laku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `forecast`
---
-ALTER TABLE `forecast`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `pengeluaran`
