@@ -235,15 +235,14 @@ $start = ($page - 1) * $per_hal;
 				<tr>
 				<td colspan="4">Total Biaya</td>
 				<?php 
-				if(isset($_GET['tanggal'])){
-					$tanggal=mysql_real_escape_string($_GET['tanggal']);
-					$x=mysql_query("select sum(total_harga) as total from barang_laku where tanggal='$tanggal'");	
-					$xx=mysql_fetch_array($x);			
-					echo "<td><b> Rp.". number_format($xx['total']).",-</b></td>";
-				}else{
+				$brownies = mysql_query('select sum(productionlvl) from `agregat`');
+				$browniessisa = mysql_result($brownies, 0); 
+				$hargasisa = mysql_query('SELECT sum(sisa) as test FROM (select sisa from `agregat` WHERE sisa>0) as test1')or die(mysql_error());
+				$hasilsisa = mysql_result($hargasisa, 0); 
+				$pekerja = mysql_query('select sum(workers) from `agregat`');
+				$hasilpekerja = mysql_result($pekerja, 0);
 
-				}
-
+				echo "<td><b> Rp.". number_format(($hasilpekerja*375000)+($browniessisa*30000)).",-</b></td>";
 				?>
 				</tr>
 			</table>
