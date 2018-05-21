@@ -47,7 +47,7 @@ while($d=mysql_fetch_array($det)){
 
 		</tr>
 		<tr>
-			<td>Forecast</td>
+			<td>Forecast Minggu Besok</td>
 			<td>
 			<?php 
 			echo round($hasilfc) ?>
