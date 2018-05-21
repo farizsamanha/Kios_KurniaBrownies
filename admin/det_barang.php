@@ -15,7 +15,7 @@ $nama = mysql_query("select nama from barang where id='$id_brg'");
 $x = mysql_result($nama,0);
 $fc=mysql_query("select avg(jumlah) as test from (select jumlah from `barang_laku` where nama like '%$x%' 
 	order by tanggal desc limit 7) as test1 ")or die(mysql_error());
-
+$hasilfc = mysql_result($fc, 0);
 $det=mysql_query("select * from barang where id='$id_brg'")or die(mysql_error());
 
 while($d=mysql_fetch_array($det)){
@@ -48,10 +48,11 @@ while($d=mysql_fetch_array($det)){
 		</tr>
 		<tr>
 			<td>Forecast</td>
-			<td><?php 
-			while($g=mysql_fetch_array($fc)){
-			echo $g['test'] ?></td>
-			<?php } ?>
+			<td>
+			<?php 
+			echo round($hasilfc) ?>
+			</td>
+			
 		</tr>
 	</table>
 <?php 
