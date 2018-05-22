@@ -13,8 +13,8 @@ $id_brg=mysql_real_escape_string($_GET['id']);
 //SELECT SUM(jumlah) as test FROM (SELECT jumlah FROM `barang_laku` where nama like '%almond kecil%' ORDER BY tanggal DESC LIMIT 4) as test1
 $nama = mysql_query("select nama from barang where id='$id_brg'");
 $x = mysql_result($nama,0);
-$fc=mysql_query("select avg(demand) as test from (select demand from `forecast` where namabarang like '%$x%' 
-	order by minggu_ke desc limit 4) as test1 ")or die(mysql_error());
+$fc=mysql_query("select avg(jumlah) as test from (select jumlah from `barang_laku` where nama like '%$x%' 
+	order by tanggal desc limit 7) as test1 ")or die(mysql_error());
 $hasilfc = mysql_result($fc, 0);
 $det=mysql_query("select * from barang where id='$id_brg'")or die(mysql_error());
 

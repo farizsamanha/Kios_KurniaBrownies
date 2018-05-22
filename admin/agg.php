@@ -8,7 +8,7 @@ include 'header.php';
     <br>
 </div>
 <?php 
-$per_hal=20;
+$per_hal=50;
 $jumlah_record=mysql_query("SELECT COUNT(*) from barang");
 $jum=mysql_result($jumlah_record, 0);
 $halaman=ceil($jum / $per_hal);
