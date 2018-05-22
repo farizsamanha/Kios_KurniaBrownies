@@ -2,14 +2,14 @@
 include 'config.php';
 $id = $_POST['id'];
 $nama=$_POST['nama'];
-$suplier=$_POST['suplier'];
+
 $harga=$_POST['harga'];
 $jumlah=$_POST['jumlah'];
 $lead=$_POST['lead'];
 $sd=$_POST['sd'];
 $sl=$_POST['sl'];
 
-mysql_query("update bahanbaku set nama='$nama', supplier='$suplier', harga='$harga', jumlah='$jumlah', lead='$lead', sd='$sd', sl='$sl' where id='$id'")or die(mysql_error());
+mysql_query("update bahanbaku set nama='$nama', harga='$harga', jumlah='$jumlah', lead='$lead', sd='$sd', sl='$sl' where id='$id'")or die(mysql_error());
 header("location:rop.php");
 
 //'','$nama','$suplier','$harga','$jumlah','$lead','$sd','$sl', '', '', '', ''

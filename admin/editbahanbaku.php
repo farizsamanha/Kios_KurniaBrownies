@@ -20,6 +20,7 @@ while($d=mysql_fetch_array($det)){
 			</tr>
 			
 			
+
 			<tr>
 				<td>Harga</td>
 				<td><input type="text" class="form-control" name="harga" value="<?php echo $d['harga'] ?>"></td>
@@ -31,17 +32,17 @@ while($d=mysql_fetch_array($det)){
 
 			<tr>
 				<td>sd</td>
-				<td><input type="text" class="form-control" name="jumlah" value="<?php echo $d['sd'] ?>"></td>
+				<td><input type="text" class="form-control" name="sd" value="<?php echo $d['sd'] ?>"></td>
 			</tr>
 
 			<tr>
 				<td>lead</td>
-				<td><input type="text" class="form-control" name="jumlah" value="<?php echo $d['lead'] ?>"></td>
+				<td><input type="text" class="form-control" name="lead" value="<?php echo $d['lead'] ?>"></td>
 			</tr>
 
 			<tr>
 				<td>sl</td>
-				<td><input type="text" class="form-control" name="jumlah" value="<?php echo $d['sl'] ?>"></td>
+				<td><input type="text" class="form-control" name="sl" value="<?php echo $d['sl'] ?>"></td>
 			</tr>
 
 			<tr>

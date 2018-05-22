@@ -14,7 +14,7 @@ $id_brg=mysql_real_escape_string($_GET['id']);
 $nama = mysql_query("select nama from barang where id='$id_brg'");
 $x = mysql_result($nama,0);
 $fc=mysql_query("select avg(jumlah) as test from (select jumlah from `barang_laku` where nama like '%$x%' 
-	order by tanggal desc limit 7) as test1 ")or die(mysql_error());
+	order by tanggal desc limit 21) as test1 ")or die(mysql_error());
 $hasilfc = mysql_result($fc, 0);
 $det=mysql_query("select * from barang where id='$id_brg'")or die(mysql_error());
 

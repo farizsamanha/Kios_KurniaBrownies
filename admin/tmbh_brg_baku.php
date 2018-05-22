@@ -8,7 +8,7 @@ $lead=$_POST['lead'];
 $sd=$_POST['sd'];
 $sl=$_POST['sl'];
 
-mysql_query("insert into bahanbaku values('','$nama','$suplier','$harga','$jumlah','$lead','$sd','$sl', '', '', '', '')");
+mysql_query("insert into bahanbaku values('','$nama','$suplier','$harga','$jumlah','$lead','$sd','$sl', '1.645', '', '', '')");
 header("location:rop.php");
 
 //insert into bahanbaku values('','10','10','10','10','10','10','10')
