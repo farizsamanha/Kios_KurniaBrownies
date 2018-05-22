@@ -85,6 +85,7 @@
 			<li><a href="barang.php"><span class="glyphicon glyphicon-briefcase"></span>  Data Barang</a></li>
 			<li><a href="barang_laku.php"><span class="glyphicon glyphicon-briefcase"></span>  Entry Penjualan</a></li>
 			<li><a href="agg.php"><span class="glyphicon glyphicon-briefcase"></span>  Agregat</a></li>
+			<li><a href="rop.php"><span class="glyphicon glyphicon-briefcase"></span>  ROP Bahan Baku</a></li>
 			<li><a href="ganti_foto.php"><span class="glyphicon glyphicon-picture"></span>  Ganti Foto</a></li>
 			<li><a href="ganti_pass.php"><span class="glyphicon glyphicon-lock"></span> Ganti Password</a></li>
 			<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>  Logout</a></li>			
