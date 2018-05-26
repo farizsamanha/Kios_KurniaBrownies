@@ -61,9 +61,15 @@ $start = ($page - 1) * $per_hal;
 		$brg=mysql_query("select * from bahanbaku where nama like '$cari' or jenis like '$cari'");
 	}else{
 		$brg=mysql_query("select * from bahanbaku limit $start, $per_hal");
+		$brgbaru=mysql_query("select sum(jumlah) from barang_laku");
+		$x = mysql_result($brgbaru, 0);	
 	}
 	$no=1;
 	while($b=mysql_fetch_array($brg)){
+
+		//teta = sqrt((power((jumlah),2)*power(sl,2))+power(lead,2)*power(sd,2))
+		//ss = z*(sqrt((power((jumlah),2)*power(sl,2))+power(lead,2)*power(sd,2)))
+		// rop (jumlah)*lead+(z*(sqrt((power((jumlah),2)*power(sl,2))+power(lead,2)*power(sd,2))))
 
 		?>
 		<tr>
@@ -71,6 +77,7 @@ $start = ($page - 1) * $per_hal;
 			<td><?php echo $b['nama'] ?></td>
 			<td>Rp.<?php echo number_format($b['harga']) ?>,-</td>
 			<td><?php echo $b['jumlah'] ?></td>
+
 			<td><?php echo $b['sd'] ?></td>
 			<td><?php echo $b['lead'] ?></td>
 			<td><?php echo $b['sl'] ?></td>
@@ -136,17 +143,17 @@ $start = ($page - 1) * $per_hal;
 					</div>		
 
 					<div class="form-group">
-						<label>lead</label>
-						<input name="lead" type="text" class="form-control" placeholder="lead">
+						<label>Waktu Pengiriman</label>
+						<input name="lead" type="text" class="form-control" placeholder="waktu kirim...">
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label>Standar Deviasi Demand</label>
 						<input name="sd" type="text" class="form-control" placeholder="Standar Deviasi Demand">
 					</div>	
 					<div class="form-group">
 						<label>Standar Deviasi Lead Time</label>
 						<input name="sl" type="text" class="form-control" placeholder="Standar Deviasi Lead Time">
-					</div>	
+					</div>	 -->
 
 
 

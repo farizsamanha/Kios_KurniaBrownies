@@ -7,6 +7,8 @@
 <br/>
 
 <?php 
+
+
 $periksa=mysql_query("select * from barang where jumlah <=3");
 while($q=mysql_fetch_array($periksa)){	
 	if($q['jumlah']<=3){	
@@ -54,9 +56,9 @@ $start = ($page - 1) * $per_hal;
 <table class="table table-hover">
 	<tr>
 		<th class="col-md-1">No</th>
-		<th class="col-md-4">Nama Barang</th>
-		<th class="col-md-3">Harga Jual</th>
-		<th class="col-md-1">Jumlah</th>
+		<th class="col-md-2">Nama Barang</th>
+		<th class="col-md-1">Harga Jual</th>
+		<th class="col-md-3">Jumlah di toko</th>
 		<!-- <th class="col-md-1">Sisa</th>		 -->
 		<th class="col-md-3">Opsi</th>
 	</tr>
@@ -137,7 +139,7 @@ $start = ($page - 1) * $per_hal;
 						<input name="harga" type="text" class="form-control" placeholder="Harga Jual per unit">
 					</div>	
 					<div class="form-group">
-						<label>Jumlah</label>
+						<label>Jumlah di toko</label>
 						<input name="jumlah" type="text" class="form-control" placeholder="Jumlah">
 					</div>																	
 
